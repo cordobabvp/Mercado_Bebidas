@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MERCADO BEBIDAS</title>
-    <link rel="stylesheet" href="../CSS/style.css">
-    <enlace rel="preconectar" href="https://fonts.googleapis.com">
-    <enlace rel="preconectar" href="https://fonts.gstatic.com" crossorigin>
-    <enlace href="https: //fonts.googleapis.com/css2? family= M+PLUS+2 & family= Open+Sans:wght@300 &familia= Roboto:peso@300 & display=swap" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>MERCADO BEBIDAS</title>
+    
+        <!--Estilos Propios-->
+        <link rel="stylesheet" href="../CSS/bootstrap.css">
+    
+        <link rel="stylesheet" href="../CSS/style.css">
+    
+        <enlace rel="preconectar" href="https://fonts.googleapis.com">
+        <enlace rel="preconectar" href="https://fonts.gstatic.com" crossorigin>
+        <enlace href="https: //fonts.googleapis.com/css2? family= M+PLUS+2 & family= Open+Sans:wght@300 &familia= Roboto:peso@300 & display=swap" rel="stylesheet">
+    </head>
 <body>
     <header>
         <span class="logo">
@@ -19,14 +25,18 @@
         <span>
             <h1 class="titulo">MERCADO BEBIDAS</h1>
         </span>
-        <nav class="menu">
-            <ul>
-                <a href="../index.html"><li><h2>INICIO</h2></li></a>
-                <a href="productos.html"><li><h2>PRODUCTOS</h2></li></a>
-                <a href="nosotros.html"><li><h2>NOSOTROS</h2></li></a>
-                <a href="micuenta.html"><li><h2>MI CUENTA</h2></li></a>
-                <a href="contacto.html"><li><h2>CONTACTO</h2></li></a>
-            </ul>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="../index.html">Inicio</a>
+              <a class="navbar-brand" href="productos.html">Productos</a>
+              <a class="navbar-brand" href="nosotros.html">Nosotros</a>
+              <a class="navbar-brand" href="contacto.html">Contacto</a>
+              <a class="navbar-brand" href="micuenta.html">Mi Cuenta</a>
+              <form class="d-flex">
+                <input class="form-control me-2"; type="buscar"; placeholder="Buscar"; aria-label="Buscar">
+                <button class="btn btn-outline-success"; style="background-color: #F1BB6A"; type="submit">Buscar</button>
+              </form>
+            </div>
         </nav>
     </header>
     <div class="nosotroscuerpo">    
@@ -56,5 +66,7 @@
         </section>
     </footer>
     
+    <script src="../js/bootstrap.js"></script>
+
 </body>
 </html>

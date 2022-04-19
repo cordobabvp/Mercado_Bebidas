@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MERCADO BEBIDAS</title>
+
+    <!--Estilos Propios-->
+    <link rel="stylesheet" href="./CSS/bootstrap.css">
+
     <link rel="stylesheet" href="./CSS/style.css">
+
     <enlace rel="preconectar" href="https://fonts.googleapis.com">
     <enlace rel="preconectar" href="https://fonts.gstatic.com" crossorigin>
     <enlace href="https: //fonts.googleapis.com/css2? family= M+PLUS+2 & family= Open+Sans:wght@300 &familia= Roboto:peso@300 & display=swap" rel="stylesheet">
@@ -19,21 +25,54 @@
         <span>
             <h1 class="titulo">MERCADO BEBIDAS</h1>
         </span>
-        <nav class="menu">
-            <ul>
-                <a href="index.html"><li><h2>INICIO</h2></li></a>
-                <a href="./PAGES/productos.html"><li><h2>PRODUCTOS</h2></li></a>
-                <a href="./PAGES/nosotros.html"><li><h2>NOSOTROS</h2></li></a>
-                <a href="./PAGES/micuenta.html"><li><h2>MI CUENTA</h2></li></a>
-                <a href="./PAGES/contacto.html"><li><h2>CONTACTO</h2></li></a>
-            </ul>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">Inicio</a>
+              <a class="navbar-brand" href="./PAGES/productos.html">Productos</a>
+              <a class="navbar-brand" href="./PAGES/nosotros.html">Nosotros</a>
+              <a class="navbar-brand" href="./PAGES/contacto.html">Contacto</a>
+              <a class="navbar-brand" href="./PAGES/micuenta.html">Mi Cuenta</a>
+              <form class="d-flex">
+                <input class="form-control me-2"; type="buscar"; placeholder="Buscar"; aria-label="Buscar">
+                <button class="btn btn-outline-success"; style="background-color: #F1BB6A"; type="submit">Buscar</button>
+              </form>
+            </div>
         </nav>
     </header>  
             <div class="cuerpo">
                     <div >
                         <h3 class="subtitulo">DESTACADOS DE LA SEMANA</h3>
                     </div>
-                    <table class="tabla" border="1">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Stella</th>
+                            <th scope="col">Quilmes</th>
+                            <th scope="col">Brahma</th>
+                            <th scope="col">Andes</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Producto</th>
+                            <td>473cc</td>
+                            <td>473cc</td>
+                            <td>1000cc</td>
+                            <td>1000cc</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Precio</th>
+                            <td>150$</td>
+                            <td>125$</td>
+                            <td>200$</td>
+                            <td>220$</td>
+                          </tr>
+                          <tr>
+                        </tbody>
+                      </table>
+                    <!--<table class="table table-warning table-bordered" class="tabla"  border="1">
                    
                         <tr>
                             <th>MARCA</th>
@@ -56,17 +95,18 @@
                             <td>200$</td>
                             <td>220$</td>
                         </tr>
-                    </table>
-
+                    </table>-->  
+                    
+                </div>        
                     <div >
                         <h3 class="subtitulo" id="subtitulo2">SPONSORS</h3>
                     </div>
               
                     <div class="sponsors">
-                        <img id="sponsor" src="./IMAGENES/stellanuevo.jpg" alt="STELLA ARTOIS">
-                        <img id="sponsor" src="./IMAGENES/heinekennuevo.jpg" alt="HEINEKEN">
-                        <img id="sponsor" src="./IMAGENES/quilmesnuevo.jpg" alt="QUILMES">
-                        <img id="sponsor" src="./IMAGENES/budnuevo.jpg" alt="BUDWEISER">
+                        <img class="img-fluid" id="sponsor" src="./IMAGENES/stellanuevo.jpg" alt="STELLA ARTOIS">
+                        <img class="img-fluid" id="sponsor" src="./IMAGENES/heinekennuevo.jpg" alt="HEINEKEN">
+                        <img class="img-fluid" id="sponsor" src="./IMAGENES/quilmesnuevo.jpg" alt="QUILMES">
+                        <img class="img-fluid" id="sponsor" src="./IMAGENES/budnuevo.jpg" alt="BUDWEISER">
                     </div>
             </div>         
             <footer>
@@ -86,7 +126,7 @@
                     </ul>
                 </section>
             </footer>
-    
-    
+
+    <script src="./js/bootstrap.js"></script>
 </body>
 </html>

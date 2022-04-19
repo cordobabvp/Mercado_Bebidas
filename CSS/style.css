@@ -8,7 +8,7 @@ a {
 /*GRIDS*/
 .cuerpo {
     display: grid;
-    grid-template-rows: 170px 300px 100px 80px;
+    grid-template-rows: 170px 300px 100px 200px;
     grid-template-areas: 
     "subtitulo"
     "tabla"
@@ -17,17 +17,18 @@ a {
 }
 #subtitulo2 {
     grid-area: subtitulo2;
+    margin: 0 0 0 30px;
 }
 .contactocuerpo {
     display: grid;
-    grid-template-rows: 150px 320px;
+    grid-template-rows: 150px 450px;
     grid-template-areas: 
     "subtitulocontacto"
     "formulariocontacto";
 }
 .nosotroscuerpo {
     display: grid;
-    grid-template-rows: 150px 1230px;
+    grid-template-rows: 150px 1650px;
     grid-template-areas: 
     "subtitulonosotros"
     "textonosotros";
@@ -109,26 +110,26 @@ body{
     font-family: 'M PLUS 2', sans-serif;
     grid-area: subtitulo;
 } 
-.tabla {
+.table {
     object-fit: contain;
-    height:240px ;
-    width:1170px ;
+    height:auto ;
+    width:1000px ;
     margin: 0 auto 0 auto;
     background-color:rgba(241, 187, 106, 0.52);
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    font-size: 30px;
     grid-area: tabla;
 }
 .sponsors {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
-    width: 150px;
+    height: 180px;
+    width: 600px;
     color: white;
     margin: auto;
     grid-area: sponsor;
-    margin-bottom: 200px;
 }
 #sponsor {
     border-radius: 50%;
@@ -136,9 +137,8 @@ body{
     height: 150px;
     width: 150px;
     padding: 0 10px 0px 10px;
-    margin-bottom: 30px;
-    margin-bottom: 200px;
     transition: all 1s;
+    grid-area: sponsor;
 }
 #sponsor:hover {
     transform: scale(1.1);
@@ -150,6 +150,8 @@ body{
     text-align: justify;
     font-family: 'Roboto', sans-serif;
     grid-area: textonosotros;
+    height: fit-content;
+    width: fit-content;
 }
 .formulario {
     background-color: #f1bb6a79;
@@ -185,6 +187,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-style: italic;
+    padding: 10px;
 }
 .sublistaproductos {
     list-style-type: none;
@@ -304,13 +307,13 @@ footer {
         grid-area: subtitulo;
         margin: auto;
     }
-    .subtitulo #subtitulo2 {
+    #subtitulo2 {
         grid-area: subtitulo2;
         justify-content: center;
-        margin: 0;
+        margin: auto;
         width:fit-content;
     }
-    .tabla {
+    .table {
         object-fit: contain;
         height:160px ;
         width:280px ;
