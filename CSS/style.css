@@ -8,16 +8,15 @@ a {
 /*GRIDS*/
 .cuerpo {
     display: grid;
-    grid-template-rows: 170px 300px 100px 200px;
+    grid-template-rows: 357px 150px 500px 150px 200px;
     grid-template-areas: 
+    "carousel"
     "subtitulo"
-    "tabla"
+    "destacados"
     "subtitulo2"
     "sponsor";
-}
-#subtitulo2 {
-    grid-area: subtitulo2;
-    margin: 0 0 0 30px;
+    justify-content: center;
+    align-items: center;
 }
 .contactocuerpo {
     display: grid;
@@ -28,26 +27,33 @@ a {
 }
 .nosotroscuerpo {
     display: grid;
-    grid-template-rows: 150px 1650px;
+    grid-template-rows: 150px 1500px;
     grid-template-areas: 
     "subtitulonosotros"
     "textonosotros";
 }
-.subtitulonosotros {
-    grid-area: subtitulonosotros;
-}
-/*.contenedor-header {
+.micuentacuerpo {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 200px 200px;
+    grid-template-rows: 150px 100px 200px 50px 300px;
     grid-template-areas: 
-    "titulo titulo titulo titulo"
-    "navmenu navmenu navmenu navmenu";
-}*/
-/*.titulo-header {
-    grid-area: titulo;
-}*/
+    "subtitulomicuenta"
+    "subsubtitulo"
+    "formulario"
+    "subsubtitulo2"
+    "formulario2"
+    ;
+}
+.productoscuerpo {
+    display: grid;
+    grid-template-rows: 150px 1500px;
+    grid-template-areas: 
+    "subtituloproductos"
+    "sectionproductos"
+    ;
+}
+
 /*HEADER*/
+
 header {
     background-color: black;
     display: flex;
@@ -74,23 +80,16 @@ header {
     width: 50px;
     height: 50px;
 }
-.menu ul {
-    padding: 20px 210px 20px 210px;
-    /*background-color: rgba(184, 64, 94, 0.911);*/
-    background: linear-gradient(rgba(184, 64, 94, 0.911),rgb(255, 115, 0));
-    display: flex;
+.carousel {
+    grid-area: carousel;
 }
-.menu ul li{
-    padding: 0 30px 0 30px;
-    color: white;
-    list-style: none;
-    overflow: hidden;
-    font-family: 'Roboto', sans-serif;
+.carousel-item {
+    max-height: fit-content;
+    width: auto;
+    object-fit: contain;
+    align-items: center;
 }
-.menu ul li:hover {
-    transform: scale(1.1) ;
-    color: black;
-}
+
 /*HEADER FIN*/
 /*BODY*/
 body{
@@ -99,49 +98,61 @@ body{
     background-size: cover;
     /*fijar posicion de fondo en todas las paginas por igual*/
 }
+.bodyindex {
+    background-image: none;
+    background: linear-gradient(#ff6600, rgb(173, 106, 17));
+}
 .subtitulo {
     background-color:rgba(241, 187, 106, 0.52);
     color: white;
     padding: 20px;
-    margin: 50px 0 50px 30px;
+    margin: 0px 0 0px 30px;
     border: 2px solid black;
     width: fit-content;
     height: fit-content;
     font-family: 'M PLUS 2', sans-serif;
     grid-area: subtitulo;
 } 
-.table {
-    object-fit: contain;
-    height:auto ;
-    width:1000px ;
-    margin: 0 auto 0 auto;
-    background-color:rgba(241, 187, 106, 0.52);
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 30px;
-    grid-area: tabla;
+.destacados {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-area: destacados;
 }
 .sponsors {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 180px;
-    width: 600px;
+    width: auto;
     color: white;
-    margin: auto;
     grid-area: sponsor;
 }
 #sponsor {
     border-radius: 50%;
-    object-fit: contain;
     height: 150px;
     width: 150px;
-    padding: 0 10px 0px 10px;
+    margin: 0 10px 0px 10px;
     transition: all 1s;
-    grid-area: sponsor;
 }
 #sponsor:hover {
     transform: scale(1.1);
+}
+.subtituloproductos {
+    grid-area: subtituloproductos;
+    display: flex;
+    align-items: center;
+}
+.subtitulonosotros {
+    grid-area: subtitulonosotros;
+    display: flex;
+    align-items: center;
+}
+.subtitulomicuenta {
+    grid-area: subtitulomicuenta;
+    display: flex;
+    align-items: center;
 }
 .textonosotros {
     margin: 0 30px 30px 30px;
@@ -153,21 +164,51 @@ body{
     height: fit-content;
     width: fit-content;
 }
+.subsubtitulo {
+    font-family: 'Roboto', sans-serif;
+    height: fit-content;
+    width: fit-content;
+    margin: 0 0 0 30px;
+    color: white;
+    grid-area: subsubtitulo;
+    display: flex;
+    align-items: center;
+}
+.subsubtitulo2 {
+    font-family: 'Roboto', sans-serif;
+    height: fit-content;
+    width: fit-content;
+    margin: 0 0 20px 30px;
+    color: white;
+    grid-area: subsubtitulo2;
+    display: flex;
+    align-items: center;
+}
+#subtitulo2 {
+    grid-area: subtitulo2;
+    margin: 50px 0 0 30px;
+}
 .formulario {
     background-color: #f1bb6a79;
     height: fit-content;
     width: fit-content;
-    margin: 10px 0px 30px 30px;
+    margin: 0px 0px 0px 30px;
     border: solid black 2px;
     font-family: 'Roboto', sans-serif;
+    grid-area: formulario;
+    display: flex;
+    align-items: center;
 }
 .formulario2 {
     background-color: #f1bb6a79;
     height: fit-content;
     width: fit-content;
-    margin: 10px 0px 30px 30px;
+    margin-left: 30px ;
     border: solid black 2px;
     font-family: 'Roboto', sans-serif;
+    grid-area: formulario2;
+    display: flex;
+    align-items: center;
 }
 .fondotextarea {
     background-color: rgba(219, 173, 22, 0.253) ;
@@ -175,9 +216,11 @@ body{
 .sectionproductos {
     display: flex;
     justify-content: center;
+    align-items: center;
+    grid-area: sectionproductos;
 }
 .listaproductos {
-    margin: 0 0 30px 30px;
+    margin: 0 0 0px 30px;
     background-color: #F1BB6A;
     list-style-type: none;
     font-family: 'Roboto', sans-serif;
@@ -201,28 +244,19 @@ body{
     flex-wrap: wrap;
     justify-content: center;
 }
-.subsubtitulo {
-    font-family: 'Roboto', sans-serif;
-    height: fit-content;
-    width: fit-content;
-    margin: 0 0 20px 30px;
-    color: white;
-}
-.subsubtitulo2 {
-    font-family: 'Roboto', sans-serif;
-    height: fit-content;
-    width: fit-content;
-    margin: 0 0 20px 30px;
-    color: white;
-}
 .formulariocontacto {
     grid-area: formulariocontacto;
     background-color: #f1bb6a79;
     height: fit-content;
     width: fit-content;
-    margin: 10px 0px 30px 30px;
+    margin-left: 30px;
     border: solid black 2px;
     font-family: 'Roboto', sans-serif;
+}
+.subtitulocontacto {
+    grid-area: subtitulocontacto;
+    display: flex;
+    align-items: center;
 }
 /*BODY FIN*/
 /*FOOTER*/
@@ -253,188 +287,149 @@ footer {
 
 @media (max-width: 320px){
 
-    *{
-        margin: 0;
-        padding: 0;
-    }
     .titulo {
         padding: 0px 0 20px 0;
-        color:#F1BB6A;
         font-size: 25px;
-        text-align: center;
-        font-family: 'M PLUS 2', sans-serif;
-        margin-block-start: 0px;
-        margin-block-end: 0px;
-    }
-    .logo {
-        display: flex;
-        justify-content: center;
     }
     #iconocerveza {
         display: flex;
         justify-content: center;
-    }
-    .menu ul {
-        padding: 15px 0px 15px 0px;
-        background-color: rgba(184, 64, 94, 0.911);
-        width: 100vh;
-        display: flex;
-        justify-content:center;
         align-items: center;
-        flex-direction: column;
-        gap: 20px;
-        font-size: 10px;
+    }
+    .carousel {
+        display: none;
     }
     .cuerpo {
         display: grid;
-        grid-template-rows: 100px 220px 80px 150px;
-        grid-template-areas:
+        grid-template-columns: 100%;
+        grid-template-rows: 100px 1500px 100px 120px;
+        grid-template-areas: 
         "subtitulo"
-        "tabla"
+        "card"
         "subtitulo2"
         "sponsor"
         ;
-        justify-content: center;
-        align-items: center;
     }
     .subtitulo {
-        background-color:rgba(241, 187, 106, 0.52);
-        color: white;
-        padding: 20px;
-        border: 2px solid black;
-        font-family: 'M PLUS 2', sans-serif;
-        font-size: 15px;
-        grid-area: subtitulo;
-        margin: auto;
+    margin: auto;
+    font-size: 15px;
+    grid-area: subtitulo;
+    }
+    .card {
+        margin-bottom: 10px;
     }
     #subtitulo2 {
-        grid-area: subtitulo2;
-        justify-content: center;
         margin: auto;
-        width:fit-content;
+        font-size: 15px;
+        grid-area: subtitulo2;
     }
-    .table {
-        object-fit: contain;
-        height:160px ;
-        width:280px ;
-        background-color:rgba(241, 187, 106, 0.52);
-        text-align: center;
-        font-size: 10px;
-        font-family: 'Roboto', sans-serif;
-        grid-area: tabla;
-    }    
     .sponsors {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 150px;
-        width: 150px;
-        color: white;
+        height: 100px;
+        width: 250px;
         grid-area: sponsor;
         margin: auto;
-    
     }
     #sponsor {
-        border-radius: 50%;
-        object-fit: contain;
         height: 50px;
         width: 50px;
-        padding: 0 10px 0px 10px;
-        margin: 0;
     }
-    footer {
-        background-color: black;
-        font-family:'Roboto', sans-serif;
-    }
+    .destacados {
+        grid-area: card;
+    } 
     .redes ul li {
-        font-size: 15px;
-        color: white;
-        list-style-type: none;
-        text-align: center;
-        
-    }   
+        font-size: 10px;
+    }
     .iconoredes {
-        margin: 20px 20px 20px 0;
-        object-fit: contain;
-        height: 25px;
-        width: 25px;
-        border-radius: 50%;
+        margin: auto;
+        float: none;
+        padding: 0;
+    }
+    .listafooter {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        gap: 5px;
+        text-align: center;
+    }
+    .lista {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
     }
     .nosotroscuerpo {
         display: grid;
-        grid-template-rows: 150px 6450px;
+        grid-template-rows: 100px 6350px;
         grid-template-areas: 
         "subtitulonosotros"
         "textonosotros";
-        justify-content: center;
     }
     .subtitulonosotros {
         grid-area: subtitulonosotros;
-        margin: auto
-        ;
-    }
-    .micuentacuerpo {
-        display: grid;
-        grid-template-rows: 100px 100px 160px 50px 250px;
-        grid-template-areas: 
-        "subtitulo"
-        "subsubtitulo"
-        "formulariomicuenta"
-        "subsubtitulo2"
-        "formulariomicuenta2";
-        justify-content: center;
+        display: flex;
         align-items: center;
+        justify-content: center;
     }
-    .formulario {
-        background-color: #f1bb6a79;
-        height: fit-content;
-        width: fit-content;
-        margin: 0;
-        border: solid black 2px;
-        font-family: 'Roboto', sans-serif;
-        grid-area: formulariomicuenta;
-    }
-    .formulario2 {
-        background-color: #f1bb6a79;
-        height: fit-content;
-        width: fit-content;
-        margin: 0;
-        border: solid black 2px;
-        font-family: 'Roboto', sans-serif;
-        grid-area: formulariomicuenta2;
-    }
-    .subsubtitulo {
-        font-family: 'Roboto', sans-serif;
-        height: fit-content;
-        width: fit-content;
-        margin: 0;
-        grid-area: subsubtitulo;
-        color: white;
-    }
-    .subsubtitulo2 {
-        font-family: 'Roboto', sans-serif;
-        height: fit-content;
-        width: fit-content;
-        margin: 0;
-        grid-area: subsubtitulo2;
-        color: white;
+    .textonosotros {
+        margin: 0 8px 0 8px;
+        grid-area: textonosotros;
     }
     .contactocuerpo {
         display: grid;
-        grid-template-rows: 100px 320px;
+        grid-template-rows: 100px 450px;
         grid-template-areas: 
-        "subtitulo"
+        "subtitulocontacto"
         "formulariocontacto";
-        justify-content: center;
+    }
+    .subtitulocontacto {
+        grid-area: subtitulocontacto;
+        display: flex;
         align-items: center;
     }
     .formulariocontacto {
         grid-area: formulariocontacto;
-        background-color: #f1bb6a79;
         height: fit-content;
         width: fit-content;
+        margin: 0 8px 0 8px;
+    }
+    .micuentacuerpo {
+        display: grid;
+        grid-template-rows: 100px 120px 250px 60px 400px;
+        grid-template-areas: 
+        "subtitulomicuenta"
+        "subsubtitulo"
+        "formulario"
+        "subsubtitulo2"
+        "formulario2"
+        ;
+    }
+    .subtitulomicuenta {
+        grid-area: subtitulomicuenta;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .subsubtitulo {
+        margin: auto;
+        text-align: center;
+        grid-area: subsubtitulo;
+    }
+    .subsubtitulo2 {
         margin: 0;
-        border: solid black 2px;
-        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        grid-area: subsubtitulo2;
+    }
+    .formulario {
+        margin: 0 8px 0 8px;
+        grid-area: formulario;
+        display: flex;
+        align-items: center;
+    }
+    .formulario2 {
+        margin: 0 8px 0 8px;
+        grid-area: formulario2;
+        display: flex;
+        align-items: center;
     }
 }
