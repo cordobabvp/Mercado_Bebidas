@@ -1,435 +1,496 @@
+header {
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  padding: 0px 40px 45px 0px;
+  grid-area: logo;
+}
+
+.titulo {
+  padding: 50px 0 50px 0;
+  color: #F1BB6A;
+  font-size: 60px;
+  text-align: center;
+  font-family: "M PLUS 2", sans-serif;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+#iconocerveza {
+  margin-top: 40px;
+  margin-left: 40px;
+  width: 50px;
+  height: 50px;
+}
+
+footer {
+  background-color: black;
+  font-family: "Roboto", sans-serif;
+}
+
+.redes {
+  padding: 20px;
+}
+
+.redes ul li {
+  color: white;
+  list-style-type: none;
+  font-size: 12px;
+}
+
+.iconoredes {
+  margin: 0px 20px 0px 0;
+  float: right;
+  object-fit: contain;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.subtituloproductos {
+  grid-area: subtituloproductos;
+  display: flex;
+  align-items: center;
+}
+
+.sectionproductos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: sectionproductos;
+}
+
+.listaproductos {
+  margin: 0 0 0px 30px;
+  background-color: #F1BB6A;
+  list-style-type: none;
+  font-family: "Roboto", sans-serif;
+  opacity: 0, 52;
+  width: fit-content;
+  height: fit-content;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  padding: 10px;
+}
+
+.sublistaproductos {
+  list-style-type: none;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+}
+
+.fotoproductos {
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.subtitulonosotros {
+  grid-area: subtitulonosotros;
+  display: flex;
+  align-items: center;
+}
+
+.textonosotros {
+  margin: 0 30px 30px 30px;
+  color: rgb(84, 70, 30);
+  background-color: rgba(238, 230, 206, 0.51);
+  text-align: justify;
+  font-family: "Roboto", sans-serif;
+  grid-area: textonosotros;
+  height: fit-content;
+  width: fit-content;
+}
+
+.subtitulomicuenta {
+  grid-area: subtitulomicuenta;
+  display: flex;
+  align-items: center;
+}
+
+.subsubtitulo {
+  font-family: "Roboto", sans-serif;
+  height: fit-content;
+  width: fit-content;
+  margin: 0 0 0 30px;
+  color: white;
+  grid-area: subsubtitulo;
+  display: flex;
+  align-items: center;
+}
+
+.subsubtitulo2 {
+  font-family: "Roboto", sans-serif;
+  height: fit-content;
+  width: fit-content;
+  margin: 0 0 20px 30px;
+  color: white;
+  grid-area: subsubtitulo2;
+  display: flex;
+  align-items: center;
+}
+
+.formulario {
+  background-color: rgba(241, 187, 106, 0.4745098039);
+  height: fit-content;
+  width: fit-content;
+  margin: 0px 0px 0px 30px;
+  border: solid black 2px;
+  font-family: "Roboto", sans-serif;
+  grid-area: formulario;
+  display: flex;
+  align-items: center;
+}
+
+.formulario2 {
+  background-color: rgba(241, 187, 106, 0.4745098039);
+  height: fit-content;
+  width: fit-content;
+  margin-left: 30px;
+  border: solid black 2px;
+  font-family: "Roboto", sans-serif;
+  grid-area: formulario2;
+  display: flex;
+  align-items: center;
+}
+
+.fondotextarea {
+  background-color: rgba(219, 173, 22, 0.253);
+}
+
+.subtitulocontacto {
+  grid-area: subtitulocontacto;
+  display: flex;
+  align-items: center;
+}
+
+.formulariocontacto {
+  grid-area: formulariocontacto;
+  background-color: rgba(241, 187, 106, 0.4745098039);
+  height: fit-content;
+  width: fit-content;
+  margin-left: 30px;
+  border: solid black 2px;
+  font-family: "Roboto", sans-serif;
+}
+
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
+
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
+
 /*GRIDS*/
 .cuerpo {
-    display: grid;
-    grid-template-rows: 357px 150px 500px 150px 200px;
-    grid-template-areas: 
-    "carousel"
-    "subtitulo"
-    "destacados"
-    "subtitulo2"
-    "sponsor";
-    justify-content: center;
-    align-items: center;
+  display: grid;
+  grid-template-rows: 357px 150px 500px 150px 200px;
+  grid-template-areas: "carousel" "subtitulo" "destacados" "subtitulo2" "sponsor";
+  justify-content: center;
+  align-items: center;
 }
+
 .contactocuerpo {
-    display: grid;
-    grid-template-rows: 150px 450px;
-    grid-template-areas: 
-    "subtitulocontacto"
-    "formulariocontacto";
+  display: grid;
+  grid-template-rows: 150px 450px;
+  grid-template-areas: "subtitulocontacto" "formulariocontacto";
 }
+
 .nosotroscuerpo {
-    display: grid;
-    grid-template-rows: 150px 1500px;
-    grid-template-areas: 
-    "subtitulonosotros"
-    "textonosotros";
+  display: grid;
+  grid-template-rows: 150px 1500px;
+  grid-template-areas: "subtitulonosotros" "textonosotros";
 }
+
 .micuentacuerpo {
-    display: grid;
-    grid-template-rows: 150px 100px 200px 50px 300px;
-    grid-template-areas: 
-    "subtitulomicuenta"
-    "subsubtitulo"
-    "formulario"
-    "subsubtitulo2"
-    "formulario2"
-    ;
+  display: grid;
+  grid-template-rows: 150px 100px 200px 50px 300px;
+  grid-template-areas: "subtitulomicuenta" "subsubtitulo" "formulario" "subsubtitulo2" "formulario2";
 }
+
 .productoscuerpo {
-    display: grid;
-    grid-template-rows: 150px 1500px;
-    grid-template-areas: 
-    "subtituloproductos"
-    "sectionproductos"
-    ;
+  display: grid;
+  grid-template-rows: 150px 1500px;
+  grid-template-areas: "subtituloproductos" "sectionproductos";
 }
 
-/*HEADER*/
-
-header {
-    background-color: black;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-.logo {
-    padding: 0px 40px 45px 0px;
-    grid-area: logo;
-}
-.titulo {
-    padding: 50px 0 50px 0;
-    color:#F1BB6A;
-    font-size: 60px;
-    text-align: center;
-    font-family: 'M PLUS 2', sans-serif;
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-}
-#iconocerveza {
-    margin-top: 40px;
-    margin-left: 40px;
-    width: 50px;
-    height: 50px;
-}
-.carousel {
-    grid-area: carousel;
-}
-.carousel-item {
-    max-height: fit-content;
-    width: auto;
-    object-fit: contain;
-    align-items: center;
+body {
+  margin: 0px;
+  background-image: url(../IMAGENES/fondo6.jpg);
+  background-size: cover;
+  /*fijar posicion de fondo en todas las paginas por igual*/
 }
 
-/*HEADER FIN*/
-/*BODY*/
-body{
-    margin: 0px;
-    background-image: url(../IMAGENES/fondo6.jpg);
-    background-size: cover;
-    /*fijar posicion de fondo en todas las paginas por igual*/
-}
 .bodyindex {
-    background-image: none;
-    background: linear-gradient(#ff6600, rgb(173, 106, 17));
+  background-image: none;
+  background: linear-gradient(#ff6600, rgb(173, 106, 17));
 }
+
+.carousel {
+  grid-area: carousel;
+}
+
+.carousel-item {
+  max-height: fit-content;
+  width: auto;
+  object-fit: contain;
+  align-items: center;
+}
+
 .subtitulo {
-    background-color:rgba(241, 187, 106, 0.52);
-    color: white;
-    padding: 20px;
-    margin: 0px 0 0px 30px;
-    border: 2px solid black;
-    width: fit-content;
-    height: fit-content;
-    font-family: 'M PLUS 2', sans-serif;
-    grid-area: subtitulo;
-} 
-.destacados {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    grid-area: destacados;
+  background-color: rgba(241, 187, 106, 0.52);
+  color: white;
+  padding: 20px;
+  margin: 0px 0 0px 30px;
+  border: 2px solid black;
+  width: fit-content;
+  height: fit-content;
+  font-family: "M PLUS 2", sans-serif;
+  grid-area: subtitulo;
 }
+
+.destacados {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  grid-area: destacados;
+}
+
 .sponsors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  width: auto;
+  color: white;
+  grid-area: sponsor;
+}
+
+#sponsor {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: 0 10px 0px 10px;
+  transition: all 1s;
+}
+
+#sponsor:hover {
+  transform: scale(1.1);
+}
+
+#subtitulo2 {
+  grid-area: subtitulo2;
+  margin: 50px 0 0 30px;
+}
+
+@media (max-width: 320px) {
+  .titulo {
+    padding: 0px 0 20px 0;
+    font-size: 25px;
+  }
+
+  #iconocerveza {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 180px;
-    width: auto;
-    color: white;
+  }
+
+  .carousel {
+    display: none;
+  }
+
+  .cuerpo {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100px 1500px 100px 120px;
+    grid-template-areas: "subtitulo" "card" "subtitulo2" "sponsor";
+  }
+
+  .subtitulo {
+    margin: auto;
+    font-size: 15px;
+    grid-area: subtitulo;
+  }
+
+  .destacados {
+    grid-area: card;
+  }
+
+  .card {
+    margin-bottom: 10px;
+  }
+
+  #subtitulo2 {
+    margin: auto;
+    font-size: 15px;
+    grid-area: subtitulo2;
+  }
+
+  .sponsors {
+    height: 100px;
+    width: 250px;
     grid-area: sponsor;
-}
-#sponsor {
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    margin: 0 10px 0px 10px;
-    transition: all 1s;
-}
-#sponsor:hover {
-    transform: scale(1.1);
-}
-.subtituloproductos {
+    margin: auto;
+  }
+
+  #sponsor {
+    height: 50px;
+    width: 50px;
+  }
+
+  .subtituloproductos {
     grid-area: subtituloproductos;
     display: flex;
     align-items: center;
-}
-.subtitulonosotros {
-    grid-area: subtitulonosotros;
-    display: flex;
-    align-items: center;
-}
-.subtitulomicuenta {
-    grid-area: subtitulomicuenta;
-    display: flex;
-    align-items: center;
-}
-.textonosotros {
-    margin: 0 30px 30px 30px;
-    color: rgba(84, 70, 30, 1);
-    background-color: rgba(238, 230, 206, 0.51) ;
-    text-align: justify;
-    font-family: 'Roboto', sans-serif;
-    grid-area: textonosotros;
-    height: fit-content;
-    width: fit-content;
-}
-.subsubtitulo {
-    font-family: 'Roboto', sans-serif;
-    height: fit-content;
-    width: fit-content;
-    margin: 0 0 0 30px;
-    color: white;
-    grid-area: subsubtitulo;
-    display: flex;
-    align-items: center;
-}
-.subsubtitulo2 {
-    font-family: 'Roboto', sans-serif;
-    height: fit-content;
-    width: fit-content;
-    margin: 0 0 20px 30px;
-    color: white;
-    grid-area: subsubtitulo2;
-    display: flex;
-    align-items: center;
-}
-#subtitulo2 {
-    grid-area: subtitulo2;
-    margin: 50px 0 0 30px;
-}
-.formulario {
-    background-color: #f1bb6a79;
-    height: fit-content;
-    width: fit-content;
-    margin: 0px 0px 0px 30px;
-    border: solid black 2px;
-    font-family: 'Roboto', sans-serif;
-    grid-area: formulario;
-    display: flex;
-    align-items: center;
-}
-.formulario2 {
-    background-color: #f1bb6a79;
-    height: fit-content;
-    width: fit-content;
-    margin-left: 30px ;
-    border: solid black 2px;
-    font-family: 'Roboto', sans-serif;
-    grid-area: formulario2;
-    display: flex;
-    align-items: center;
-}
-.fondotextarea {
-    background-color: rgba(219, 173, 22, 0.253) ;
-}
-.sectionproductos {
+  }
+
+  .sectionproductos {
     display: flex;
     justify-content: center;
     align-items: center;
     grid-area: sectionproductos;
-}
-.listaproductos {
+  }
+
+  .listaproductos {
     margin: 0 0 0px 30px;
     background-color: #F1BB6A;
     list-style-type: none;
-    font-family: 'Roboto', sans-serif;
-    opacity: 0,52;
+    font-family: "Roboto", sans-serif;
+    opacity: 0, 52;
     width: fit-content;
     height: fit-content;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 20px;
     font-style: italic;
     padding: 10px;
-}
-.sublistaproductos {
+  }
+
+  .sublistaproductos {
     list-style-type: none;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     display: flex;
-}
-.fotoproductos {
+  }
+
+  .fotoproductos {
     height: 200px;
     width: 200px;
     object-fit: contain;
     flex-wrap: wrap;
     justify-content: center;
-}
-.formulariocontacto {
-    grid-area: formulariocontacto;
-    background-color: #f1bb6a79;
-    height: fit-content;
-    width: fit-content;
-    margin-left: 30px;
-    border: solid black 2px;
-    font-family: 'Roboto', sans-serif;
-}
-.subtitulocontacto {
+  }
+
+  .nosotroscuerpo {
+    display: grid;
+    grid-template-rows: 100px 6350px;
+    grid-template-areas: "subtitulonosotros" "textonosotros";
+  }
+
+  .subtitulonosotros {
+    grid-area: subtitulonosotros;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .textonosotros {
+    margin: 0 8px 0 8px;
+    grid-area: textonosotros;
+  }
+
+  .micuentacuerpo {
+    display: grid;
+    grid-template-rows: 100px 120px 250px 60px 400px;
+    grid-template-areas: "subtitulomicuenta" "subsubtitulo" "formulario" "subsubtitulo2" "formulario2";
+  }
+
+  .subtitulomicuenta {
+    grid-area: subtitulomicuenta;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  .subsubtitulo {
+    margin: auto;
+    text-align: center;
+    grid-area: subsubtitulo;
+  }
+
+  .subsubtitulo2 {
+    margin: 0;
+    text-align: center;
+    grid-area: subsubtitulo2;
+  }
+
+  .formulario {
+    margin: 0 8px 0 8px;
+    grid-area: formulario;
+    display: flex;
+    align-items: center;
+  }
+
+  .formulario2 {
+    margin: 0 8px 0 8px;
+    grid-area: formulario2;
+    display: flex;
+    align-items: center;
+  }
+
+  .contactocuerpo {
+    display: grid;
+    grid-template-rows: 100px 450px;
+    grid-template-areas: "subtitulocontacto" "formulariocontacto";
+  }
+
+  .subtitulocontacto {
     grid-area: subtitulocontacto;
     display: flex;
     align-items: center;
-}
-/*BODY FIN*/
-/*FOOTER*/
-footer {
-    background-color: black;
-    font-family:'Roboto', sans-serif;
-}
-.redes {
-    padding: 20px;
-}
-.redes ul li {
-    color: white;
-    list-style-type: none;
-    font-size: 12px;
-}
-.iconoredes {
-    margin: 0px 20px 0px 0;
-    float: right;
-    object-fit: contain;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-}
+  }
 
-/*FOOTER FIN*/
+  .formulariocontacto {
+    grid-area: formulariocontacto;
+    height: fit-content;
+    width: fit-content;
+    margin: 0 8px 0 8px;
+  }
 
-/*RESPONSIVE*/
+  .redes ul li {
+    font-size: 10px;
+  }
 
-@media (max-width: 320px){
-
-    .titulo {
-        padding: 0px 0 20px 0;
-        font-size: 25px;
-    }
-    #iconocerveza {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .carousel {
-        display: none;
-    }
-    .cuerpo {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 100px 1500px 100px 120px;
-        grid-template-areas: 
-        "subtitulo"
-        "card"
-        "subtitulo2"
-        "sponsor"
-        ;
-    }
-    .subtitulo {
+  .iconoredes {
     margin: auto;
-    font-size: 15px;
-    grid-area: subtitulo;
-    }
-    .card {
-        margin-bottom: 10px;
-    }
-    #subtitulo2 {
-        margin: auto;
-        font-size: 15px;
-        grid-area: subtitulo2;
-    }
-    .sponsors {
-        height: 100px;
-        width: 250px;
-        grid-area: sponsor;
-        margin: auto;
-    }
-    #sponsor {
-        height: 50px;
-        width: 50px;
-    }
-    .destacados {
-        grid-area: card;
-    } 
-    .redes ul li {
-        font-size: 10px;
-    }
-    .iconoredes {
-        margin: auto;
-        float: none;
-        padding: 0;
-    }
-    .listafooter {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        padding: 0;
-        gap: 5px;
-        text-align: center;
-    }
-    .lista {
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-    .nosotroscuerpo {
-        display: grid;
-        grid-template-rows: 100px 6350px;
-        grid-template-areas: 
-        "subtitulonosotros"
-        "textonosotros";
-    }
-    .subtitulonosotros {
-        grid-area: subtitulonosotros;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .textonosotros {
-        margin: 0 8px 0 8px;
-        grid-area: textonosotros;
-    }
-    .contactocuerpo {
-        display: grid;
-        grid-template-rows: 100px 450px;
-        grid-template-areas: 
-        "subtitulocontacto"
-        "formulariocontacto";
-    }
-    .subtitulocontacto {
-        grid-area: subtitulocontacto;
-        display: flex;
-        align-items: center;
-    }
-    .formulariocontacto {
-        grid-area: formulariocontacto;
-        height: fit-content;
-        width: fit-content;
-        margin: 0 8px 0 8px;
-    }
-    .micuentacuerpo {
-        display: grid;
-        grid-template-rows: 100px 120px 250px 60px 400px;
-        grid-template-areas: 
-        "subtitulomicuenta"
-        "subsubtitulo"
-        "formulario"
-        "subsubtitulo2"
-        "formulario2"
-        ;
-    }
-    .subtitulomicuenta {
-        grid-area: subtitulomicuenta;
-        display: flex;
-        align-items: center;
-        text-align: center;
-    }
-    .subsubtitulo {
-        margin: auto;
-        text-align: center;
-        grid-area: subsubtitulo;
-    }
-    .subsubtitulo2 {
-        margin: 0;
-        text-align: center;
-        grid-area: subsubtitulo2;
-    }
-    .formulario {
-        margin: 0 8px 0 8px;
-        grid-area: formulario;
-        display: flex;
-        align-items: center;
-    }
-    .formulario2 {
-        margin: 0 8px 0 8px;
-        grid-area: formulario2;
-        display: flex;
-        align-items: center;
-    }
+    float: none;
+    padding: 0;
+  }
+
+  .listafooter {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .lista {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
+
+/*# sourceMappingURL=style.css.map */

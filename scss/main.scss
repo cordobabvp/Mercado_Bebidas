@@ -1,0 +1,324 @@
+@import "./components/header";
+@import "./components/footer";
+@import "./components/productos";
+@import "./components/nosotros";
+@import "./components/micuenta";
+@import "./components/contacto";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+//GRIDS//
+/*GRIDS*/
+.cuerpo {
+    display: grid;
+    grid-template-rows: 357px 150px 500px 150px 200px;
+    grid-template-areas: 
+    "carousel"
+    "subtitulo"
+    "destacados"
+    "subtitulo2"
+    "sponsor";
+    justify-content: center;
+    align-items: center;
+}
+.contactocuerpo {
+    display: grid;
+    grid-template-rows: 150px 450px;
+    grid-template-areas: 
+    "subtitulocontacto"
+    "formulariocontacto";
+}
+.nosotroscuerpo {
+    display: grid;
+    grid-template-rows: 150px 1500px;
+    grid-template-areas: 
+    "subtitulonosotros"
+    "textonosotros";
+}
+.micuentacuerpo {
+    display: grid;
+    grid-template-rows: 150px 100px 200px 50px 300px;
+    grid-template-areas: 
+    "subtitulomicuenta"
+    "subsubtitulo"
+    "formulario"
+    "subsubtitulo2"
+    "formulario2"
+    ;
+}
+.productoscuerpo {
+    display: grid;
+    grid-template-rows: 150px 1500px;
+    grid-template-areas: 
+    "subtituloproductos"
+    "sectionproductos"
+    ;
+}
+
+//-----BODY-----//
+body{
+    margin: 0px;
+    background-image: url(../IMAGENES/fondo6.jpg);
+    background-size: cover;
+    /*fijar posicion de fondo en todas las paginas por igual*/
+}
+//Index//
+.bodyindex {
+    background-image: none;
+    background: linear-gradient(#ff6600, rgb(173, 106, 17));
+}
+.carousel {
+    grid-area: carousel;
+}
+.carousel-item {
+    max-height: fit-content;
+    width: auto;
+    object-fit: contain;
+    align-items: center;
+}
+.subtitulo {
+    background-color:rgba(241, 187, 106, 0.52);
+    color: white;
+    padding: 20px;
+    margin: 0px 0 0px 30px;
+    border: 2px solid black;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'M PLUS 2', sans-serif;
+    grid-area: subtitulo;
+} 
+.destacados {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-area: destacados;
+}
+.sponsors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    width: auto;
+    color: white;
+    grid-area: sponsor;
+}
+#sponsor {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    margin: 0 10px 0px 10px;
+    transition: all 1s;
+}
+#sponsor:hover {
+    transform: scale(1.1);
+}
+#subtitulo2 {
+    grid-area: subtitulo2;
+    margin: 50px 0 0 30px;
+}
+
+
+//------RESPONSIVE------//
+@media (max-width: 320px){
+
+    //HEADER//
+    .titulo {
+        padding: 0px 0 20px 0;
+        font-size: 25px;
+    }
+    #iconocerveza {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    //BODY//
+    .carousel {
+        display: none;
+    }
+    .cuerpo {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100px 1500px 100px 120px;
+        grid-template-areas: 
+        "subtitulo"
+        "card"
+        "subtitulo2"
+        "sponsor"
+        ;
+    }
+    .subtitulo {
+    margin: auto;
+    font-size: 15px;
+    grid-area: subtitulo;
+    }
+    .destacados {
+        grid-area: card;
+    }
+    .card {
+        margin-bottom: 10px;
+    }
+    #subtitulo2 {
+        margin: auto;
+        font-size: 15px;
+        grid-area: subtitulo2;
+    }
+    .sponsors {
+        height: 100px;
+        width: 250px;
+        grid-area: sponsor;
+        margin: auto;
+    }
+    #sponsor {
+        height: 50px;
+        width: 50px;
+    }
+
+    //PRODUCTOS//
+    .subtituloproductos {
+        grid-area: subtituloproductos;
+        display: flex;
+        align-items: center;
+    }
+    .sectionproductos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: sectionproductos;
+    }
+    .listaproductos {
+        margin: 0 0 0px 30px;
+        background-color: #F1BB6A;
+        list-style-type: none;
+        font-family: 'Roboto', sans-serif;
+        opacity: 0,52;
+        width: fit-content;
+        height: fit-content;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-style: italic;
+        padding: 10px;
+    }
+    .sublistaproductos {
+        list-style-type: none;
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+    }
+    .fotoproductos {
+        height: 200px;
+        width: 200px;
+        object-fit: contain;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    //NOSOTROS//
+    .nosotroscuerpo {
+        display: grid;
+        grid-template-rows: 100px 6350px;
+        grid-template-areas: 
+        "subtitulonosotros"
+        "textonosotros";
+    }
+    .subtitulonosotros {
+        grid-area: subtitulonosotros;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .textonosotros {
+        margin: 0 8px 0 8px;
+        grid-area: textonosotros;
+    }
+
+    //MI CUENTA//
+    .micuentacuerpo {
+        display: grid;
+        grid-template-rows: 100px 120px 250px 60px 400px;
+        grid-template-areas: 
+        "subtitulomicuenta"
+        "subsubtitulo"
+        "formulario"
+        "subsubtitulo2"
+        "formulario2"
+        ;
+    }
+    .subtitulomicuenta {
+        grid-area: subtitulomicuenta;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .subsubtitulo {
+        margin: auto;
+        text-align: center;
+        grid-area: subsubtitulo;
+    }
+    .subsubtitulo2 {
+        margin: 0;
+        text-align: center;
+        grid-area: subsubtitulo2;
+    }
+    .formulario {
+        margin: 0 8px 0 8px;
+        grid-area: formulario;
+        display: flex;
+        align-items: center;
+    }
+    .formulario2 {
+        margin: 0 8px 0 8px;
+        grid-area: formulario2;
+        display: flex;
+        align-items: center;
+    }
+
+    //CONTACTO//
+    .contactocuerpo {
+        display: grid;
+        grid-template-rows: 100px 450px;
+        grid-template-areas: 
+        "subtitulocontacto"
+        "formulariocontacto";
+    }
+    .subtitulocontacto {
+        grid-area: subtitulocontacto;
+        display: flex;
+        align-items: center;
+    }
+    .formulariocontacto {
+        grid-area: formulariocontacto;
+        height: fit-content;
+        width: fit-content;
+        margin: 0 8px 0 8px;
+    }
+
+    //FOOTER//
+    .redes ul li {
+        font-size: 10px;
+    }
+    .iconoredes {
+        margin: auto;
+        float: none;
+        padding: 0;
+    }
+    .listafooter {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        gap: 5px;
+        text-align: center;
+    }
+    .lista {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+}

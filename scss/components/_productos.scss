@@ -1,0 +1,37 @@
+//Productos//
+.subtituloproductos {
+    grid-area: subtituloproductos;
+    display: flex;
+    align-items: center;
+}
+.sectionproductos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: sectionproductos;
+}
+.listaproductos {
+    margin: 0 0 0px 30px;
+    background-color: #F1BB6A;
+    list-style-type: none;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0,52;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    padding: 10px;
+}
+.sublistaproductos {
+    list-style-type: none;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+}
+.fotoproductos {
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+    flex-wrap: wrap;
+    justify-content: center;
+}

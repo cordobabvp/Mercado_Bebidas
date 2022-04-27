@@ -1,0 +1,15 @@
+//Contacto//
+.subtitulocontacto {
+    grid-area: subtitulocontacto;
+    display: flex;
+    align-items: center;
+}
+.formulariocontacto {
+    grid-area: formulariocontacto;
+    background-color: #f1bb6a79;
+    height: fit-content;
+    width: fit-content;
+    margin-left: 30px;
+    border: solid black 2px;
+    font-family: 'Roboto', sans-serif;
+}

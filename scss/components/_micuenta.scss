@@ -1,0 +1,51 @@
+//MiCuenta//
+.subtitulomicuenta {
+    grid-area: subtitulomicuenta;
+    display: flex;
+    align-items: center;
+}
+.subsubtitulo {
+    font-family: 'Roboto', sans-serif;
+    height: fit-content;
+    width: fit-content;
+    margin: 0 0 0 30px;
+    color: white;
+    grid-area: subsubtitulo;
+    display: flex;
+    align-items: center;
+}
+.subsubtitulo2 {
+    font-family: 'Roboto', sans-serif;
+    height: fit-content;
+    width: fit-content;
+    margin: 0 0 20px 30px;
+    color: white;
+    grid-area: subsubtitulo2;
+    display: flex;
+    align-items: center;
+}
+.formulario {
+    background-color: #f1bb6a79;
+    height: fit-content;
+    width: fit-content;
+    margin: 0px 0px 0px 30px;
+    border: solid black 2px;
+    font-family: 'Roboto', sans-serif;
+    grid-area: formulario;
+    display: flex;
+    align-items: center;
+}
+.formulario2 {
+    background-color: #f1bb6a79;
+    height: fit-content;
+    width: fit-content;
+    margin-left: 30px ;
+    border: solid black 2px;
+    font-family: 'Roboto', sans-serif;
+    grid-area: formulario2;
+    display: flex;
+    align-items: center;
+}
+.fondotextarea {
+    background-color: rgba(219, 173, 22, 0.253) ;
+}
