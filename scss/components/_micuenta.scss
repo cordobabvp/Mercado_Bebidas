@@ -1,57 +1,95 @@
 //MiCuenta//
 
 $micuenta: (
-    colorfor: #f1bb6a79,
+    colorfor: #e2d9be,
     height: fit-content,
     width: fit-content,
     display: flex,
     align-items: center,
 );
-
 .subsubtitulo {
+    text-align: center;
     font-family: 'Roboto', sans-serif;
     height: map-get($micuenta, height);
-    width: map-get($micuenta, width);
-    margin: 0 0 0 30px;
     color: white;
     grid-area: subsubtitulo;
-    display: map-get($micuenta, display);
-    align-items: map-get($micuenta, align-items);
 }
-.subsubtitulo2 {
-    font-family: 'Roboto', sans-serif;
-    height: map-get($micuenta, height);
-    width: map-get($micuenta, width);
-    margin: 0 0 20px 30px;
-    color: white;
-    grid-area: subsubtitulo2;
-    display: map-get($micuenta, display);
-    align-items: map-get($micuenta, align-items);
+.micuentacol1 {
+    grid-area: micuentacol1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .subsubtitulo2 {
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        height: map-get($micuenta, height);
+        width: map-get($micuenta, width);
+        color: white;
+        grid-area: subsubtitulo2;
+        display: map-get($micuenta, display);
+        align-items: map-get($micuenta, align-items);
+    }
+    .formulario {
+        background-color: map-get($micuenta, colorfor);
+        height: map-get($micuenta, height);
+        width: map-get($micuenta, width);
+        padding: 5px;
+        border-radius: 5px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        grid-area: formulario;
+        display: map-get($micuenta, display);
+        align-items: map-get($micuenta, align-items);
+        line-height: 35px;
+        display: flex;
+        flex-direction: column;
+        .finalform {
+            padding-top: 2px;
+            .boton {
+                padding: 0 2px 0 2px;
+                border-radius: 5px;
+            }
+        }
+    }    
 }
-.formulario {
-    background-color: map-get($micuenta, colorfor);
-    height: map-get($micuenta, height);
-    width: map-get($micuenta, width);
-    margin: 0px 0px 0px 30px;
-    border: solid black 2px;
-    font-family: 'Roboto', sans-serif;
-    grid-area: formulario;
-    display: map-get($micuenta, display);
-    align-items: map-get($micuenta, align-items);
-    line-height: 35px;
-}
-.formulario2 {
-    background-color: map-get($micuenta, colorfor);
-    height: map-get($micuenta, height);
-    width: map-get($micuenta, width);
-    margin-left: 30px ;
-    border: solid black 2px;
-    font-family: 'Roboto', sans-serif;
-    grid-area: formulario2;
-    display: map-get($micuenta, display);
-    align-items: map-get($micuenta, align-items);
-    line-height: 30px;
+.micuentacol2 {
+    grid-area: micuentacol2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .subsubtitulo2 {
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        height: map-get($micuenta, height);
+        width: map-get($micuenta, width);
+        color: white;
+        grid-area: subsubtitulo2;
+        display: map-get($micuenta, display);
+        align-items: map-get($micuenta, align-items);
+    }
+    .formulario2 {
+        background-color: map-get($micuenta, colorfor);
+        height: map-get($micuenta, height);
+        width: map-get($micuenta, width);
+        padding: 5px;
+        border-radius: 5px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        grid-area: formulario2;
+        display: map-get($micuenta, display);
+        align-items: map-get($micuenta, align-items);
+        line-height: 30px;
+        display: flex;
+        flex-direction: column;
+        .finalform {
+            padding-top: 2px;
+            .boton {
+                padding: 0 2px 0 2px;
+                border-radius: 5px;
+            }
+        }
+    }
 }
 .fondotextarea {
-    background-color: rgba(219, 173, 22, 0.253) ;
+    background-color: rgba(212, 140, 107, 0.473) ;
 }

@@ -1,14 +1,30 @@
 //Contacto//
 
+.subformcontacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .formulariocontacto {
+        grid-area: formulariocontacto;
+        background-color: #e2d9be;
+        height: fit-content;
+        width: fit-content;
+        padding: 5px;
+        border-radius: 5px;
+        font-family: 'Roboto', sans-serif;
+        line-height: 25px;
+        display: flex;
+        flex-direction: column;
+        .finalform {
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 2px;
+            .boton {
+                padding: 0 2px 0 2px;
+                border-radius: 5px;
+            }
+        }
 
-
-.formulariocontacto {
-    grid-area: formulariocontacto;
-    background-color: #f1bb6a79;
-    height: fit-content;
-    width: fit-content;
-    margin-left: 30px;
-    border: solid black 2px;
-    font-family: 'Roboto', sans-serif;
-    line-height: 25px;
+    }
 }
+

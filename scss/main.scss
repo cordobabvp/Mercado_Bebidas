@@ -18,15 +18,15 @@ a {
 //GRIDS//
 .cuerpo {
     display: grid;
-    grid-template-rows: 357px 150px 500px 150px 200px;
+    align-items: center;
+    grid-template-rows: auto 150px auto 130px 200px;
     grid-template-areas: 
     "carousel"
-    "subtitulo"
+    "subtituloindex"
     "destacados"
     "subtitulo2"
-    "sponsor";
-    justify-content: center;
-    align-items: center;
+    "sponsor"
+    ;
 }
 .contactocuerpo {
     display: grid;
@@ -37,28 +37,27 @@ a {
 }
 .nosotroscuerpo {
     display: grid;
-    grid-template-rows: 150px 1500px;
+    grid-template-rows: 150px 200px;
     grid-template-areas: 
     "subtitulonosotros"
     "textonosotros";
 }
 .micuentacuerpo {
     display: grid;
-    grid-template-rows: 150px 100px 240px 50px 320px;
+    grid-template-rows: 150px 75px 500px;
+    grid-template-columns: 50% 50%;
     grid-template-areas: 
-    "subtitulomicuenta"
-    "subsubtitulo"
-    "formulario"
-    "subsubtitulo2"
-    "formulario2"
+    "subtitulomicuenta subtitulomicuenta"
+    "subsubtitulo subsubtitulo" 
+    "micuentacol1 micuentacol2"
     ;
 }
 .productoscuerpo {
     display: grid;
-    grid-template-rows: 150px 1500px;
+    grid-template-rows: 150px 1450px;
     grid-template-areas: 
     "subtituloproductos"
-    "sectionproductos"
+    "galeria"
     ;
 }
 
@@ -74,14 +73,8 @@ body{
     background-image: none;
     background: linear-gradient(#ff6600, rgb(173, 106, 17));
 }
-.carousel {
+.carousel-inner {
     grid-area: carousel;
-    .carousel-item {
-        max-height: fit-content;
-        width: auto;
-        object-fit: contain;
-        align-items: center;
-    }
 }
 .subtitulo {
     background-color:rgba(241, 187, 106, 0.52);
@@ -97,14 +90,15 @@ body{
 .subtitulo2 {
     @extend .subtitulo;
     grid-area: subtitulo2;
-    margin: 50px 0 0 30px;
+    margin-left: 30px;
 }
 .destacados {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
     grid-area: destacados;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 20% 20% 20%;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .sponsors {
     display: flex;
@@ -131,7 +125,9 @@ body{
     display: $display;
     align-items: $align;
 }
- 
+.subtituloindex{
+    @include subtitulos (subtituloindex, flex, center)
+}
 .subtitulocontacto {
     @include subtitulos (subtitulocontacto, flex, center)
 }
@@ -148,48 +144,53 @@ body{
 
 
 //------RESPONSIVE------//
+
+//MOBILE-320px//
 @media (max-width: 320px){
 
     //HEADER//
-    .titulo {
-        padding: 0px 0 20px 0;
-        font-size: 25px;
-    }
-    #iconocerveza {
+    header {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        .titulo {
+            padding: 0px 0 20px 0;
+            font-size: 25px;
+        }
+        #iconocerveza {
+            padding: 5px;
+            margin: 0;
+        }
     }
-    
     //BODY//
-
     .cuerpo {
         display: grid;
+        align-items: center;
         grid-template-columns: 100%;
-        grid-template-rows: 100px 1500px 100px 120px;
+        grid-template-rows: 100px auto 100px 120px;
         grid-template-areas: 
-        "subtitulo"
-        "card"
+        "subtituloindex"
+        "destacados"
         "subtitulo2"
         "sponsor"
         ;
         .carousel {
             display: none;
         }
-
         .destacados {
-            grid-area: card;
-        }
-        .card {
-            margin-bottom: 10px;
+            grid-area: destacados;
+            display: flex;
+            flex-direction: column;
+            margin: 45px;
+            row-gap: 10px;
         }
     }
+    .subtituloindex{
+        grid-area: subtituloindex;
+        justify-content: center;
+    }
     .subtitulo {
-        display: flex;
-        
         font-size: 15px;
-        grid-area: subtitulo;
-        margin: auto;
+        margin: 0;
     }
     .subtitulo2 {
         display: flex;
@@ -208,50 +209,35 @@ body{
         height: 50px;
         width: 50px;
     }
-
     //PRODUCTOS//
+    .productoscuerpo {
+        display: grid;
+        grid-template-rows: 100px auto;
+        grid-template-areas:
+        "subtituloproductos" 
+        "galeria"
+        ;
+    }
     .subtituloproductos {
         grid-area: subtituloproductos;
         display: flex;
         align-items: center;
-        margin: auto;
-    }
-    .sectionproductos {
-        display: flex;
         justify-content: center;
+        margin: 0;
+    }
+    .galeria {
+        margin: 50px;
+        grid-area: galeria;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        grid-area: sectionproductos;
-    }
-    .listaproductos {
-        margin: 0 0 0px 30px;
-        background-color: #F1BB6A;
-        list-style-type: none;
-        font-family: 'Roboto', sans-serif;
-        opacity: 0,52;
-        width: fit-content;
-        height: fit-content;
-        font-family: 'Roboto', sans-serif;
-        font-size: 20px;
-        font-style: italic;
-        padding: 10px;
-    }
-    .sublistaproductos {
-        list-style-type: none;
-        font-family: 'Roboto', sans-serif;
-        display: flex;
-    }
-    .fotoproductos {
-        height: 200px;
-        width: 200px;
-        object-fit: contain;
-        flex-wrap: wrap;
         justify-content: center;
+        row-gap: 10px;
     }
-
     //NOSOTROS//
     .nosotroscuerpo {
         display: grid;
-        grid-template-rows: 100px 6350px;
+        grid-template-rows: 100px auto;
         grid-template-areas: 
         "subtitulonosotros"
         "textonosotros";
@@ -263,69 +249,53 @@ body{
         justify-content: center;        
     }
     .textonosotros {
-        margin: 0 8px 0 8px;
+        margin: 20px;
         grid-area: textonosotros;
     }
 
     //MI CUENTA//
     .micuentacuerpo {
         display: grid;
-        grid-template-rows: 100px 120px 300px 60px 450px;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        grid-template-rows: 100px 100px auto auto;
+        grid-template-columns: none;
         grid-template-areas: 
         "subtitulomicuenta"
         "subsubtitulo"
-        "formulario"
-        "subsubtitulo2"
-        "formulario2"
+        "micuentacol1"
+        "micuentacol2"
         ;
+        .subtitulomicuenta {
+            margin: auto;
+        }
+        .formulario {
+            margin-bottom: 20px;
+        }
+        .micuentacol2 {
+            margin: 20px 0 20px 0;
+        }
     }
-    .subtitulomicuenta {
-        grid-area: subtitulomicuenta;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .subsubtitulo {
-        margin: auto;
-        text-align: center;
-        grid-area: subsubtitulo;
-    }
-    .subsubtitulo2 {
-        margin: auto;
-        text-align: center;
-        grid-area: subsubtitulo2;
-    }
-    .formulario {
-        margin: 0 8px 0 8px;
-        grid-area: formulario;
-        display: flex;
-        align-items: center;
-    }
-    .formulario2 {
-        margin: 0 8px 0 8px;
-        grid-area: formulario2;
-        display: flex;
-        align-items: center;
-    }
-
     //CONTACTO//
     .contactocuerpo {
         display: grid;
-        grid-template-rows: 120px 460px;
+        grid-template-rows: 120px auto;
         grid-template-areas: 
         "subtitulocontacto"
         "formulariocontacto";
+        align-items: center;
     }
     .subtitulocontacto {
         grid-area: subtitulocontacto;
         display: flex;
-        align-items: center;
+        justify-content: center;
     }
     .formulariocontacto {
         grid-area: formulariocontacto;
         height: fit-content;
         width: fit-content;
-        margin: 0 8px 0 8px;
+        margin: 20px;
     }
 
     //FOOTER//
@@ -352,4 +322,148 @@ body{
         justify-content: space-evenly;
     }
     
+}
+@media (max-width: 768px) and (min-width: 576px) {
+
+    header {
+        background-color: black;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .logo {
+        padding: 0px;
+        grid-area: logo;
+    }
+    .titulo {
+        padding: 50px 0 50px 0;
+        color:#F1BB6A;
+        font-size: 40px;
+        text-align: center;
+        font-family: 'M PLUS 2', sans-serif;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+    }
+    #iconocerveza {
+        margin: 0;
+        width: 40px;
+        height: 40px;
+    }
+    .navbar {
+        border-radius: 5%;
+        padding: 6px;
+    }
+    .cuerpo {
+        display: grid;
+        align-items: center;
+        grid-template-rows: auto 130px auto 100px auto;
+        grid-template-areas: 
+        "carousel"
+        "subtituloindex"
+        "destacados"
+        "subtitulo2"
+        "sponsor";
+    }
+    .subtituloindex {
+        grid-area: subtituloindex;
+        justify-content: center;
+    }
+    .destacados {
+        margin: auto;
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    .subtitulo {
+        margin: 0px;
+        font-size: 25px;
+        padding: 15px;
+    }
+    .subtitulo2 {
+        font-size: 25px;
+        grid-area: subtitulo2;
+        margin: auto;
+    }  
+    .sponsors {
+        height: 150px;
+        grid-area: sponsor;
+    }
+    .sponsors #sponsor {
+        height: 100px;
+        width: 100px;
+    }
+    //NOSOTROS//
+    .nosotroscuerpo {
+        display: grid;
+        grid-template-rows: 100px auto;
+        grid-template-areas: 
+        "subtitulonosotros"
+        "textonosotros";
+    }
+    .subtitulonosotros {
+        grid-area: subtitulonosotros;
+        justify-content: center;
+    }
+    .textonosotros {
+        grid-area: textonosotros;
+    }
+    //MI CUENTA// 
+    .micuentacuerpo {
+        display: grid;
+        grid-template-rows: 100px 75px auto;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 
+        "subtitulomicuenta subtitulomicuenta"
+        "subsubtitulo subsubtitulo" 
+        "micuentacol1 micuentacol2"
+        ;
+    }
+    .subtitulomicuenta {
+        grid-area: subtitulomicuenta;
+        justify-content: center;
+    }
+    .subsubtitulo {
+        margin: auto;
+        grid-area: subsubtitulo;
+    }
+    .formulario2 {
+        margin-bottom: 20px;
+    }
+        //CONTACTO//
+    .contactocuerpo {
+        display: grid;
+        grid-template-rows: 100px 460px;
+        grid-template-areas: 
+        "subtitulocontacto"
+        "formulariocontacto";
+        justify-content: center;
+        align-items: center;
+    }
+    .subtitulocontacto {
+        grid-area: subtitulocontacto;
+        justify-content: center;
+    }
+    .formulariocontacto {
+        grid-area: formulariocontacto;
+        margin: 0;
+    }
+    //PRODUCTOS//
+    .productoscuerpo {
+        display: grid;
+        grid-template-rows: 100px 1150px;
+        grid-template-areas: 
+        "subtituloproductos"
+        "galeria"
+        ;
+    }
+    .subtituloproductos {
+        grid-area: subtituloproductos;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
 }

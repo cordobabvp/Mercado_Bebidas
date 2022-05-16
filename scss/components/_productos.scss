@@ -1,35 +1,12 @@
 //Productos//
 
-
-
-.sectionproductos {
-    display: flex;
-    justify-content: center;
+.galeria {
+    margin: 10px 0 10px 0;
+    grid-area: galeria;
+    display: grid;
+    grid-template-rows: 33% 33% 34% ;
+    grid-template-columns: 23% 23% 23% 23%;
     align-items: center;
-    grid-area: sectionproductos;
-}
-.listaproductos {
-    margin: 0 0 0px 30px;
-    background-color: #F1BB6A;
-    list-style-type: none;
-    font-family: 'Roboto', sans-serif;
-    opacity: 0,52;
-    width: fit-content;
-    height: fit-content;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-style: italic;
-    padding: 10px;
-}
-.sublistaproductos {
-    list-style-type: none;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-}
-.fotoproductos {
-    height: 200px;
-    width: 200px;
-    object-fit: contain;
-    flex-wrap: wrap;
     justify-content: center;
+    column-gap: 15px;
 }
