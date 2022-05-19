@@ -14,6 +14,11 @@
 a {
     text-decoration: none;
 }
+body{
+    margin: 0px;
+    background-image: url(../IMAGENES/fondo6-min.jpg);
+    background-size: cover;
+}
 
 //GRIDS//
 .cuerpo {
@@ -30,7 +35,7 @@ a {
 }
 .contactocuerpo {
     display: grid;
-    grid-template-rows: 150px 450px;
+    grid-template-rows: 150px auto;
     grid-template-areas: 
     "subtitulocontacto"
     "formulariocontacto";
@@ -44,7 +49,7 @@ a {
 }
 .micuentacuerpo {
     display: grid;
-    grid-template-rows: 150px 75px 500px;
+    grid-template-rows: 150px 75px auto;
     grid-template-columns: 50% 50%;
     grid-template-areas: 
     "subtitulomicuenta subtitulomicuenta"
@@ -61,20 +66,40 @@ a {
     ;
 }
 
-//-----BODY-----//
-body{
-    margin: 0px;
-    background-image: url(../IMAGENES/fondo6.jpg);
-    background-size: cover;
-    /*fijar posicion de fondo en todas las paginas por igual*/
-}
 //Index//
 .bodyindex {
     background-image: none;
     background: linear-gradient(#ff6600, rgb(173, 106, 17));
-}
-.carousel-inner {
-    grid-area: carousel;
+    .carousel-inner {
+        grid-area: carousel;
+    }
+    .destacados {
+        grid-area: destacados;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 20% 20% 20%;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .sponsors {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 180px;
+        width: auto;
+        color: white;
+        grid-area: sponsor;
+        #sponsor {
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            margin: 0 10px 0px 10px;
+            transition: all 1s;
+        }
+    }
+    #sponsor:hover {
+        transform: scale(1.1);
+    }
 }
 .subtitulo {
     background-color:rgba(241, 187, 106, 0.52);
@@ -91,33 +116,6 @@ body{
     @extend .subtitulo;
     grid-area: subtitulo2;
     margin-left: 30px;
-}
-.destacados {
-    grid-area: destacados;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 20% 20% 20%;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.sponsors {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 180px;
-    width: auto;
-    color: white;
-    grid-area: sponsor;
-    #sponsor {
-        border-radius: 50%;
-        height: 150px;
-        width: 150px;
-        margin: 0 10px 0px 10px;
-        transition: all 1s;
-    }
-}
-#sponsor:hover {
-    transform: scale(1.1);
 }
 //MIXIN Subtitulos//
 @mixin subtitulos($grid, $display, $align) {
@@ -140,8 +138,6 @@ body{
 .subtitulomicuenta {
     @include subtitulos(subtitulomicuenta, flex, center)
 }
-
-
 
 //------RESPONSIVE------//
 
@@ -176,6 +172,14 @@ body{
         .carousel {
             display: none;
         }
+        .subtituloindex{
+            grid-area: subtituloindex;
+            justify-content: center;
+            .subtitulo {
+                font-size: 15px;
+                margin: 0;
+            }
+        }
         .destacados {
             grid-area: destacados;
             display: flex;
@@ -183,31 +187,23 @@ body{
             margin: 45px;
             row-gap: 10px;
         }
-    }
-    .subtituloindex{
-        grid-area: subtituloindex;
-        justify-content: center;
-    }
-    .subtitulo {
-        font-size: 15px;
-        margin: 0;
-    }
-    .subtitulo2 {
-        display: flex;
-        align-items: center;
-        font-size: 15px;
-        grid-area: subtitulo2;
-        margin: auto;
-    }  
-    .sponsors {
-        height: 100px;
-        width: 250px;
-        grid-area: sponsor;
-        margin: auto;
-    }
-    .sponsors #sponsor {
-        height: 50px;
-        width: 50px;
+        .subtitulo2 {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            grid-area: subtitulo2;
+            margin: auto;
+        }
+        .sponsors {
+            height: 100px;
+            width: 250px;
+            grid-area: sponsor;
+            margin: auto;
+        }
+        .sponsors #sponsor {
+            height: 50px;
+            width: 50px;
+        } 
     }
     //PRODUCTOS//
     .productoscuerpo {
@@ -217,22 +213,25 @@ body{
         "subtituloproductos" 
         "galeria"
         ;
-    }
-    .subtituloproductos {
-        grid-area: subtituloproductos;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-    }
-    .galeria {
-        margin: 50px;
-        grid-area: galeria;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        row-gap: 10px;
+        .subtituloproductos {
+            grid-area: subtituloproductos;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            .subtitulo {
+                margin: 0;
+            }
+        }
+        .galeria {
+            margin: 50px;
+            grid-area: galeria;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 10px;
+        }
     }
     //NOSOTROS//
     .nosotroscuerpo {
@@ -241,18 +240,20 @@ body{
         grid-template-areas: 
         "subtitulonosotros"
         "textonosotros";
+        .subtitulonosotros {
+            grid-area: subtitulonosotros;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .subtitulo {
+                margin: 0;
+            }        
+        }
+        .textonosotros {
+            margin: 20px;
+            grid-area: textonosotros;
+        }
     }
-    .subtitulonosotros {
-        grid-area: subtitulonosotros;
-        display: flex;
-        align-items: center;
-        justify-content: center;        
-    }
-    .textonosotros {
-        margin: 20px;
-        grid-area: textonosotros;
-    }
-
     //MI CUENTA//
     .micuentacuerpo {
         display: grid;
@@ -269,6 +270,12 @@ body{
         ;
         .subtitulomicuenta {
             margin: auto;
+            .subtitulo {
+                margin: 0;
+            }
+        }
+        .subsubtitulo {
+            text-align: center;
         }
         .formulario {
             margin-bottom: 20px;
@@ -285,44 +292,47 @@ body{
         "subtitulocontacto"
         "formulariocontacto";
         align-items: center;
+        .subtitulocontacto {
+            grid-area: subtitulocontacto;
+            display: flex;
+            justify-content: center;
+            .subtitulo {
+                margin: 0;
+            }
+        }
+        .formulariocontacto {
+            grid-area: formulariocontacto;
+            height: fit-content;
+            width: fit-content;
+            margin: 20px;
+        }
     }
-    .subtitulocontacto {
-        grid-area: subtitulocontacto;
-        display: flex;
-        justify-content: center;
-    }
-    .formulariocontacto {
-        grid-area: formulariocontacto;
-        height: fit-content;
-        width: fit-content;
-        margin: 20px;
-    }
-
     //FOOTER//
-    .redes ul li {
-        font-size: 10px;
-    }
-    .iconoredes {
-        margin: auto;
-        float: none;
-        padding: 0;
-    }
     .listafooter {
         display: flex;
         flex-direction: column;
         margin: 0;
         padding: 0;
-        gap: 5px;
         text-align: center;
+        font-size: 10px;
+        ul.lista {
+            padding: 0;
+        }
+        .lista {
+            padding-left: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
-    .lista {
+    .iconoredes {
+        margin: auto;
+        float: none;
         padding: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-    
+    }   
 }
+
+//--MEDIA QUERIES TABLET--//
 @media (max-width: 768px) and (min-width: 576px) {
 
     header {
@@ -331,28 +341,28 @@ body{
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
-    }
-    .logo {
-        padding: 0px;
-        grid-area: logo;
-    }
-    .titulo {
-        padding: 50px 0 50px 0;
-        color:#F1BB6A;
-        font-size: 40px;
-        text-align: center;
-        font-family: 'M PLUS 2', sans-serif;
-        margin-block-start: 0px;
-        margin-block-end: 0px;
-    }
-    #iconocerveza {
-        margin: 0;
-        width: 40px;
-        height: 40px;
-    }
-    .navbar {
-        border-radius: 5%;
-        padding: 6px;
+        .logo {
+            padding: 0px;
+            grid-area: logo;
+            #iconocerveza {
+                margin: 0;
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .titulo {
+            padding: 50px 0 50px 0;
+            color:#F1BB6A;
+            font-size: 40px;
+            text-align: center;
+            font-family: 'M PLUS 2', sans-serif;
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+        }
+        .navbar {
+            border-radius: 5%;
+            padding: 6px;
+        }
     }
     .cuerpo {
         display: grid;
@@ -364,106 +374,122 @@ body{
         "destacados"
         "subtitulo2"
         "sponsor";
-    }
-    .subtituloindex {
-        grid-area: subtituloindex;
-        justify-content: center;
-    }
-    .destacados {
-        margin: auto;
-        display: grid;
-        grid-template-columns: 30% 30% 30%;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-    }
-    .subtitulo {
-        margin: 0px;
-        font-size: 25px;
-        padding: 15px;
-    }
-    .subtitulo2 {
-        font-size: 25px;
-        grid-area: subtitulo2;
-        margin: auto;
-    }  
-    .sponsors {
-        height: 150px;
-        grid-area: sponsor;
-    }
-    .sponsors #sponsor {
-        height: 100px;
-        width: 100px;
+        .subtituloindex {
+            grid-area: subtituloindex;
+            justify-content: center;
+            .subtitulo {
+                margin: 0px;
+                font-size: 25px;
+                padding: 15px;
+            }
+        }
+        .destacados {
+            margin: auto;
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        .subtitulo2 {
+            font-size: 25px;
+            grid-area: subtitulo2;
+            margin: auto;
+        }
+        .sponsors {
+            height: 150px;
+            grid-area: sponsor;
+        }
+        .sponsors #sponsor {
+            height: 100px;
+            width: 100px;
+        } 
     }
     //NOSOTROS//
     .nosotroscuerpo {
         display: grid;
-        grid-template-rows: 100px auto;
+        grid-template-rows: 130px auto;
         grid-template-areas: 
         "subtitulonosotros"
         "textonosotros";
-    }
-    .subtitulonosotros {
-        grid-area: subtitulonosotros;
+        align-items: center;
         justify-content: center;
-    }
-    .textonosotros {
-        grid-area: textonosotros;
+        .subtitulonosotros {
+            grid-area: subtitulonosotros;
+            justify-content: center;
+            .subtitulo {
+                margin: 0;
+            }
+        }
+        .textonosotros {
+            grid-area: textonosotros;
+            margin-top: 30px;
+        }
     }
     //MI CUENTA// 
     .micuentacuerpo {
         display: grid;
-        grid-template-rows: 100px 75px auto;
+        grid-template-rows: 130px 75px auto;
         grid-template-columns: 50% 50%;
         grid-template-areas: 
         "subtitulomicuenta subtitulomicuenta"
         "subsubtitulo subsubtitulo" 
         "micuentacol1 micuentacol2"
         ;
-    }
-    .subtitulomicuenta {
-        grid-area: subtitulomicuenta;
-        justify-content: center;
-    }
-    .subsubtitulo {
-        margin: auto;
-        grid-area: subsubtitulo;
-    }
-    .formulario2 {
-        margin-bottom: 20px;
+        .subtitulomicuenta {
+            grid-area: subtitulomicuenta;
+            justify-content: center;
+            .subtitulo {
+                margin: 0;
+            }
+        }
+        .subsubtitulo {
+            margin: auto;
+            grid-area: subsubtitulo;
+        }
+        .formulario2 {
+            margin-bottom: 20px;
+        }
     }
         //CONTACTO//
     .contactocuerpo {
         display: grid;
-        grid-template-rows: 100px 460px;
+        grid-template-rows: 130px 460px;
         grid-template-areas: 
         "subtitulocontacto"
         "formulariocontacto";
         justify-content: center;
         align-items: center;
-    }
-    .subtitulocontacto {
-        grid-area: subtitulocontacto;
-        justify-content: center;
-    }
-    .formulariocontacto {
-        grid-area: formulariocontacto;
-        margin: 0;
+        .subtitulocontacto {
+            grid-area: subtitulocontacto;
+            justify-content: center;
+            .subtitulo {
+                margin: 0;
+            }
+        }
+        .formulariocontacto {
+            grid-area: formulariocontacto;
+            margin: 0;
+        }
     }
     //PRODUCTOS//
     .productoscuerpo {
         display: grid;
-        grid-template-rows: 100px 1150px;
+        grid-template-rows: 130px 1150px;
         grid-template-areas: 
         "subtituloproductos"
         "galeria"
         ;
+        .subtituloproductos {
+            grid-area: subtituloproductos;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            .subtitulo {
+                margin: 0;
+            }
+        }
     }
-    .subtituloproductos {
-        grid-area: subtituloproductos;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-    }
+
 }

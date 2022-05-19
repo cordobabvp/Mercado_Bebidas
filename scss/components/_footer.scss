@@ -2,14 +2,18 @@
 footer {
     background-color: black;
     font-family:'Roboto', sans-serif;
-}
-.redes {
-    padding: 20px;
-}
-.redes ul li {
-    color: white;
-    list-style-type: none;
-    font-size: 12px;
+    .redes {
+        padding: 10px;
+        ul li {
+            color: white;
+            list-style-type: none;
+            font-size: 12px;
+            padding: 5px;    
+        }
+        .listafooter ul.lista li {
+            display: inline;
+        }
+    }
 }
 .iconoredes {
     margin: 0px 20px 0px 0;
@@ -19,3 +23,7 @@ footer {
     width: 30px;
     border-radius: 50%;
 }
+
+
+
+

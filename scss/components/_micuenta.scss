@@ -6,13 +6,18 @@ $micuenta: (
     width: fit-content,
     display: flex,
     align-items: center,
+    border-radius: 3px,
+    background-color: rgba(0, 0, 0, 0.733),
 );
 .subsubtitulo {
-    text-align: center;
+    margin: auto;
     font-family: 'Roboto', sans-serif;
+    width: map-get($micuenta, width);
     height: map-get($micuenta, height);
     color: white;
     grid-area: subsubtitulo;
+    background-color: map-get($micuenta, background-color);
+    border-radius: map-get($micuenta, border-radius);
 }
 .micuentacol1 {
     grid-area: micuentacol1;
@@ -28,6 +33,8 @@ $micuenta: (
         grid-area: subsubtitulo2;
         display: map-get($micuenta, display);
         align-items: map-get($micuenta, align-items);
+        background-color: map-get($micuenta, background-color);
+        border-radius: map-get($micuenta, border-radius);
     }
     .formulario {
         background-color: map-get($micuenta, colorfor);
@@ -43,6 +50,7 @@ $micuenta: (
         line-height: 35px;
         display: flex;
         flex-direction: column;
+        gap: 2px;
         .finalform {
             padding-top: 2px;
             .boton {
@@ -66,6 +74,8 @@ $micuenta: (
         grid-area: subsubtitulo2;
         display: map-get($micuenta, display);
         align-items: map-get($micuenta, align-items);
+        background-color: map-get($micuenta, background-color);
+        border-radius: map-get($micuenta, border-radius);
     }
     .formulario2 {
         background-color: map-get($micuenta, colorfor);
@@ -81,6 +91,8 @@ $micuenta: (
         line-height: 30px;
         display: flex;
         flex-direction: column;
+        gap: 2px;
+        margin-bottom: 20px;
         .finalform {
             padding-top: 2px;
             .boton {

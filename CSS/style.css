@@ -6,23 +6,19 @@ header {
   align-items: center;
 }
 header .logo {
-  padding: 0px 0px 0px 0px;
   grid-area: logo;
 }
 header #iconocerveza {
-  margin-top: 0px;
   margin-right: 30px;
   width: 50px;
   height: 50px;
 }
-
-.titulo {
+header .titulo {
   padding: 50px 0 50px 0;
   color: #F1BB6A;
   font-size: 60px;
   text-align: center;
   font-family: "M PLUS 2", sans-serif;
-  margin-block-start: 0px;
   margin-block-end: 0px;
 }
 
@@ -30,15 +26,17 @@ footer {
   background-color: black;
   font-family: "Roboto", sans-serif;
 }
-
-.redes {
-  padding: 20px;
+footer .redes {
+  padding: 10px;
 }
-
-.redes ul li {
+footer .redes ul li {
   color: white;
   list-style-type: none;
   font-size: 12px;
+  padding: 5px;
+}
+footer .redes .listafooter ul.lista li {
+  display: inline;
 }
 
 .iconoredes {
@@ -65,7 +63,7 @@ footer {
   margin: 0 30px 30px 30px;
   padding: 5px;
   color: rgb(54, 45, 20);
-  background-color: rgba(238, 230, 206, 0.51);
+  background-color: rgba(238, 230, 206, 0.699);
   text-align: justify;
   font-family: "Roboto", sans-serif;
   grid-area: textonosotros;
@@ -78,11 +76,14 @@ footer {
 }
 
 .subsubtitulo {
-  text-align: center;
+  margin: auto;
   font-family: "Roboto", sans-serif;
+  width: fit-content;
   height: fit-content;
   color: white;
   grid-area: subsubtitulo;
+  background-color: rgba(0, 0, 0, 0.733);
+  border-radius: 3px;
 }
 
 .micuentacol1 {
@@ -100,6 +101,8 @@ footer {
   grid-area: subsubtitulo2;
   display: flex;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.733);
+  border-radius: 3px;
 }
 .micuentacol1 .formulario {
   background-color: #e2d9be;
@@ -115,6 +118,7 @@ footer {
   line-height: 35px;
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 .micuentacol1 .formulario .finalform {
   padding-top: 2px;
@@ -139,6 +143,8 @@ footer {
   grid-area: subsubtitulo2;
   display: flex;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.733);
+  border-radius: 3px;
 }
 .micuentacol2 .formulario2 {
   background-color: #e2d9be;
@@ -154,6 +160,8 @@ footer {
   line-height: 30px;
   display: flex;
   flex-direction: column;
+  gap: 2px;
+  margin-bottom: 20px;
 }
 .micuentacol2 .formulario2 .finalform {
   padding-top: 2px;
@@ -183,6 +191,8 @@ footer {
   line-height: 25px;
   display: flex;
   flex-direction: column;
+  gap: 2px;
+  margin-bottom: 20px;
 }
 .subformcontacto .formulariocontacto .finalform {
   display: flex;
@@ -203,6 +213,12 @@ a {
   text-decoration: none;
 }
 
+body {
+  margin: 0px;
+  background-image: url(../IMAGENES/fondo6-min.jpg);
+  background-size: cover;
+}
+
 .cuerpo {
   display: grid;
   align-items: center;
@@ -212,7 +228,7 @@ a {
 
 .contactocuerpo {
   display: grid;
-  grid-template-rows: 150px 450px;
+  grid-template-rows: 150px auto;
   grid-template-areas: "subtitulocontacto" "formulariocontacto";
 }
 
@@ -224,7 +240,7 @@ a {
 
 .micuentacuerpo {
   display: grid;
-  grid-template-rows: 150px 75px 500px;
+  grid-template-rows: 150px 75px auto;
   grid-template-columns: 50% 50%;
   grid-template-areas: "subtitulomicuenta subtitulomicuenta" "subsubtitulo subsubtitulo" "micuentacol1 micuentacol2";
 }
@@ -235,20 +251,39 @@ a {
   grid-template-areas: "subtituloproductos" "galeria";
 }
 
-body {
-  margin: 0px;
-  background-image: url(../IMAGENES/fondo6.jpg);
-  background-size: cover;
-  /*fijar posicion de fondo en todas las paginas por igual*/
-}
-
 .bodyindex {
   background-image: none;
   background: linear-gradient(#ff6600, rgb(173, 106, 17));
 }
-
-.carousel-inner {
+.bodyindex .carousel-inner {
   grid-area: carousel;
+}
+.bodyindex .destacados {
+  grid-area: destacados;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 20% 20% 20%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.bodyindex .sponsors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  width: auto;
+  color: white;
+  grid-area: sponsor;
+}
+.bodyindex .sponsors #sponsor {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: 0 10px 0px 10px;
+  transition: all 1s;
+}
+.bodyindex #sponsor:hover {
+  transform: scale(1.1);
 }
 
 .subtitulo, .subtitulo2 {
@@ -266,36 +301,6 @@ body {
 .subtitulo2 {
   grid-area: subtitulo2;
   margin-left: 30px;
-}
-
-.destacados {
-  grid-area: destacados;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 20% 20% 20%;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.sponsors {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 180px;
-  width: auto;
-  color: white;
-  grid-area: sponsor;
-}
-.sponsors #sponsor {
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
-  margin: 0 10px 0px 10px;
-  transition: all 1s;
-}
-
-#sponsor:hover {
-  transform: scale(1.1);
 }
 
 .subtituloindex {
@@ -352,6 +357,14 @@ body {
   .cuerpo .carousel {
     display: none;
   }
+  .cuerpo .subtituloindex {
+    grid-area: subtituloindex;
+    justify-content: center;
+  }
+  .cuerpo .subtituloindex .subtitulo, .cuerpo .subtituloindex .subtitulo2 {
+    font-size: 15px;
+    margin: 0;
+  }
   .cuerpo .destacados {
     grid-area: destacados;
     display: flex;
@@ -359,33 +372,20 @@ body {
     margin: 45px;
     row-gap: 10px;
   }
-
-  .subtituloindex {
-    grid-area: subtituloindex;
-    justify-content: center;
-  }
-
-  .subtitulo, .subtitulo2 {
-    font-size: 15px;
-    margin: 0;
-  }
-
-  .subtitulo2 {
+  .cuerpo .subtitulo2 {
     display: flex;
     align-items: center;
     font-size: 15px;
     grid-area: subtitulo2;
     margin: auto;
   }
-
-  .sponsors {
+  .cuerpo .sponsors {
     height: 100px;
     width: 250px;
     grid-area: sponsor;
     margin: auto;
   }
-
-  .sponsors #sponsor {
+  .cuerpo .sponsors #sponsor {
     height: 50px;
     width: 50px;
   }
@@ -395,16 +395,17 @@ body {
     grid-template-rows: 100px auto;
     grid-template-areas: "subtituloproductos" "galeria";
   }
-
-  .subtituloproductos {
+  .productoscuerpo .subtituloproductos {
     grid-area: subtituloproductos;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
   }
-
-  .galeria {
+  .productoscuerpo .subtituloproductos .subtitulo, .productoscuerpo .subtituloproductos .subtitulo2 {
+    margin: 0;
+  }
+  .productoscuerpo .galeria {
     margin: 50px;
     grid-area: galeria;
     display: flex;
@@ -419,15 +420,16 @@ body {
     grid-template-rows: 100px auto;
     grid-template-areas: "subtitulonosotros" "textonosotros";
   }
-
-  .subtitulonosotros {
+  .nosotroscuerpo .subtitulonosotros {
     grid-area: subtitulonosotros;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
-  .textonosotros {
+  .nosotroscuerpo .subtitulonosotros .subtitulo, .nosotroscuerpo .subtitulonosotros .subtitulo2 {
+    margin: 0;
+  }
+  .nosotroscuerpo .textonosotros {
     margin: 20px;
     grid-area: textonosotros;
   }
@@ -444,6 +446,12 @@ body {
   .micuentacuerpo .subtitulomicuenta {
     margin: auto;
   }
+  .micuentacuerpo .subtitulomicuenta .subtitulo, .micuentacuerpo .subtitulomicuenta .subtitulo2 {
+    margin: 0;
+  }
+  .micuentacuerpo .subsubtitulo {
+    text-align: center;
+  }
   .micuentacuerpo .formulario {
     margin-bottom: 20px;
   }
@@ -457,28 +465,19 @@ body {
     grid-template-areas: "subtitulocontacto" "formulariocontacto";
     align-items: center;
   }
-
-  .subtitulocontacto {
+  .contactocuerpo .subtitulocontacto {
     grid-area: subtitulocontacto;
     display: flex;
     justify-content: center;
   }
-
-  .formulariocontacto {
+  .contactocuerpo .subtitulocontacto .subtitulo, .contactocuerpo .subtitulocontacto .subtitulo2 {
+    margin: 0;
+  }
+  .contactocuerpo .formulariocontacto {
     grid-area: formulariocontacto;
     height: fit-content;
     width: fit-content;
     margin: 20px;
-  }
-
-  .redes ul li {
-    font-size: 10px;
-  }
-
-  .iconoredes {
-    margin: auto;
-    float: none;
-    padding: 0;
   }
 
   .listafooter {
@@ -486,15 +485,23 @@ body {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    gap: 5px;
     text-align: center;
+    font-size: 10px;
   }
-
-  .lista {
+  .listafooter ul.lista {
     padding: 0;
+  }
+  .listafooter .lista {
+    padding-left: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+  }
+
+  .iconoredes {
+    margin: auto;
+    float: none;
+    padding: 0;
   }
 }
 @media (max-width: 768px) and (min-width: 576px) {
@@ -505,13 +512,16 @@ body {
     justify-content: space-evenly;
     align-items: center;
   }
-
-  .logo {
+  header .logo {
     padding: 0px;
     grid-area: logo;
   }
-
-  .titulo {
+  header .logo #iconocerveza {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+  }
+  header .titulo {
     padding: 50px 0 50px 0;
     color: #F1BB6A;
     font-size: 40px;
@@ -520,14 +530,7 @@ body {
     margin-block-start: 0px;
     margin-block-end: 0px;
   }
-
-  #iconocerveza {
-    margin: 0;
-    width: 40px;
-    height: 40px;
-  }
-
-  .navbar {
+  header .navbar {
     border-radius: 5%;
     padding: 6px;
   }
@@ -538,13 +541,16 @@ body {
     grid-template-rows: auto 130px auto 100px auto;
     grid-template-areas: "carousel" "subtituloindex" "destacados" "subtitulo2" "sponsor";
   }
-
-  .subtituloindex {
+  .cuerpo .subtituloindex {
     grid-area: subtituloindex;
     justify-content: center;
   }
-
-  .destacados {
+  .cuerpo .subtituloindex .subtitulo, .cuerpo .subtituloindex .subtitulo2 {
+    margin: 0px;
+    font-size: 25px;
+    padding: 15px;
+  }
+  .cuerpo .destacados {
     margin: auto;
     display: grid;
     grid-template-columns: 30% 30% 30%;
@@ -552,94 +558,92 @@ body {
     justify-content: center;
     gap: 5px;
   }
-
-  .subtitulo, .subtitulo2 {
-    margin: 0px;
-    font-size: 25px;
-    padding: 15px;
-  }
-
-  .subtitulo2 {
+  .cuerpo .subtitulo2 {
     font-size: 25px;
     grid-area: subtitulo2;
     margin: auto;
   }
-
-  .sponsors {
+  .cuerpo .sponsors {
     height: 150px;
     grid-area: sponsor;
   }
-
-  .sponsors #sponsor {
+  .cuerpo .sponsors #sponsor {
     height: 100px;
     width: 100px;
   }
 
   .nosotroscuerpo {
     display: grid;
-    grid-template-rows: 100px auto;
+    grid-template-rows: 130px auto;
     grid-template-areas: "subtitulonosotros" "textonosotros";
+    align-items: center;
+    justify-content: center;
   }
-
-  .subtitulonosotros {
+  .nosotroscuerpo .subtitulonosotros {
     grid-area: subtitulonosotros;
     justify-content: center;
   }
-
-  .textonosotros {
+  .nosotroscuerpo .subtitulonosotros .subtitulo, .nosotroscuerpo .subtitulonosotros .subtitulo2 {
+    margin: 0;
+  }
+  .nosotroscuerpo .textonosotros {
     grid-area: textonosotros;
+    margin-top: 30px;
   }
 
   .micuentacuerpo {
     display: grid;
-    grid-template-rows: 100px 75px auto;
+    grid-template-rows: 130px 75px auto;
     grid-template-columns: 50% 50%;
     grid-template-areas: "subtitulomicuenta subtitulomicuenta" "subsubtitulo subsubtitulo" "micuentacol1 micuentacol2";
   }
-
-  .subtitulomicuenta {
+  .micuentacuerpo .subtitulomicuenta {
     grid-area: subtitulomicuenta;
     justify-content: center;
   }
-
-  .subsubtitulo {
+  .micuentacuerpo .subtitulomicuenta .subtitulo, .micuentacuerpo .subtitulomicuenta .subtitulo2 {
+    margin: 0;
+  }
+  .micuentacuerpo .subsubtitulo {
     margin: auto;
     grid-area: subsubtitulo;
   }
-
-  .formulario2 {
+  .micuentacuerpo .formulario2 {
     margin-bottom: 20px;
   }
 
   .contactocuerpo {
     display: grid;
-    grid-template-rows: 100px 460px;
+    grid-template-rows: 130px 460px;
     grid-template-areas: "subtitulocontacto" "formulariocontacto";
     justify-content: center;
     align-items: center;
   }
-
-  .subtitulocontacto {
+  .contactocuerpo .subtitulocontacto {
     grid-area: subtitulocontacto;
     justify-content: center;
   }
-
-  .formulariocontacto {
+  .contactocuerpo .subtitulocontacto .subtitulo, .contactocuerpo .subtitulocontacto .subtitulo2 {
+    margin: 0;
+  }
+  .contactocuerpo .formulariocontacto {
     grid-area: formulariocontacto;
     margin: 0;
   }
 
   .productoscuerpo {
     display: grid;
-    grid-template-rows: 100px 1150px;
+    grid-template-rows: 130px 1150px;
     grid-template-areas: "subtituloproductos" "galeria";
   }
-
-  .subtituloproductos {
+  .productoscuerpo .subtituloproductos {
     grid-area: subtituloproductos;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
+  }
+  .productoscuerpo .subtituloproductos .subtitulo, .productoscuerpo .subtituloproductos .subtitulo2 {
     margin: 0;
   }
 }
